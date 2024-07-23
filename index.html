@@ -104,9 +104,11 @@
     </style>
 </head>
 <body>
- <div class="widget-container">
+    <div class="widget-container">
         <iframe src="https://bit2me.com/fr/widget/buy/v2?currency=BTC&amp;amount=100&amp;method=card" frameborder="0" scrolling="no"></iframe>
- <div
+ <button id="buy-button" class="buy-button"><b>PAYER AVEC STRIPE</b></button>
+    </div>
+
     <script>
         document.getElementById('buy-button').addEventListener('click', function() {
             var amount = 100; // Remplacez cette valeur par le montant utilisateur réel
