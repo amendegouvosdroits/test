@@ -1,100 +1,120 @@
-<html lang="fr" data-reactroot=""><head>y.min.js">
-  
-  
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget CKDO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 50vh; 
+            margin: 0;
+            padding: 0;
+        }
 
+        .widget-container {
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 3px 19px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+            margin-top: 20px; 
+        }
 
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #fff;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start; /* Aligner le contenu en haut */
-      min-height: 50vh; 
-    }
+        .buy-button {
+            background-color: #ff7f00;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
 
-    .widget-container {
-      background-color: #fff;
-      border-radius: 6px; /* Coins arrondis */
-      padding: 7px;
-      box-shadow: 0 3px 19px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      width: 400px;
-      margin-top:-6px; 
-    }
+        .buy-button:hover {
+            background-color: #ff6200;
+        }
 
-     .buy-button:hover {
-      background-color: #ff6200; /* Couleur de fond au survol */
-    }
-    .buy-button:active {
-      transform: translateY(2px);
-    }
-    .quantity-slider {
-      -webkit-appearance: none;
-      appearance: none;
-      width: calc(65% -8px);
-      margin-top: 3px;
-      margin-bottom: 0px;
-      background-color: #ff6200;
-      outline: none;
-    }
-    .quantity-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 15px;
-      height: 15px;
-      cursor: pointer;
-      background-color: transparent;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="black" points="0,16 8,0 16,16"/><\/svg>');
-    }
+        .buy-button:active {
+            transform: translateY(2px);
+        }
 
-    .quantity-slider::-moz-range-thumb {
-      width: 10px;
-      height: 10px;
-      border-radius: 700%;
-      background: #000;
-      cursor: pointer;
-    }
+        .quantity-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: calc(65% - 8px);
+            margin-top: 3px;
+            margin-bottom: 0px;
+            background-color: #ff6200;
+            outline: none;
+        }
 
-    .quantity-label {
-      font-size: 0.8rem;
-      color: #000;
-      margin-bottom: 4px;
-    }
+        .quantity-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            background-color: transparent;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="black" points="0,16 8,0 16,16"/><\/svg>');
+        }
 
-    .quantity-value {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #ff7f00;
-      margin-bottom: 8px;
-      display: inline-block; /* Permet de placer la quantitÈ ‡ cÙtÈ de l'Ètiquette */
-    }
+        .quantity-slider::-moz-range-thumb {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #000;
+            cursor: pointer;
+        }
 
-    .status {
-      font-size: 1.4rem;
-      color: ff6200;
-      margin-top: 0.2px;
-    }
+        .quantity-label {
+            font-size: 0.8rem;
+            color: #000;
+            margin-bottom: 4px;
+        }
 
-    iframe {
-      width: calc(100% - 0px);
-      height: 525px;
-      margin-top: 0.8px;
-      overflow-y: hidden;
-      
-      
+        .quantity-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff7f00;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
 
-    
-  </style>
+        .status {
+            font-size: 1.4rem;
+            color: #ff6200;
+            margin-top: 0.2px;
+        }
 
+        iframe {
+            width: calc(100% - 40px);
+            height: 525px;
+            margin-top: 8px;
+            border: none;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <iframe src="https://bit2me.com/fr/widget/buy/v2?currency=BTC&amp;amount=100&amp;method=card" frameborder="0" scrolling="no"></iframe>
+        <button id="buy-button" class="buy-button">Payer</button>
+    </div>
 
-  </div><iframe src="https://bit2me.com/fr/widget/buy/v2?currency=BTC&amp;amount=100&amp;method=card" frameborder="0" scrolling="no"></iframe>
-  </div>
-
-
-
-
-
+    <script>
+        document.getElementById('buy-button').addEventListener('click', function() {
+            var amount = 100; // Remplacez cette valeur par le montant utilisateur réel
+            var stripeUrl = `https://buy.stripe.com/test_3cs7tj3L97YD96828b?amount=${amount}`;
+            window.location.href = stripeUrl;
+        });
+    </script>
 </body>
 </html>
