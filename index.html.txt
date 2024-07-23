@@ -1,0 +1,100 @@
+<html lang="fr" data-reactroot=""><head>y.min.js">
+  
+  
+
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Aligner le contenu en haut */
+      min-height: 50vh; 
+    }
+
+    .widget-container {
+      background-color: #fff;
+      border-radius: 6px; /* Coins arrondis */
+      padding: 7px;
+      box-shadow: 0 3px 19px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+      margin-top:-6px; 
+    }
+
+     .buy-button:hover {
+      background-color: #ff6200; /* Couleur de fond au survol */
+    }
+    .buy-button:active {
+      transform: translateY(2px);
+    }
+    .quantity-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: calc(65% -8px);
+      margin-top: 3px;
+      margin-bottom: 0px;
+      background-color: #ff6200;
+      outline: none;
+    }
+    .quantity-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      background-color: transparent;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon fill="black" points="0,16 8,0 16,16"/><\/svg>');
+    }
+
+    .quantity-slider::-moz-range-thumb {
+      width: 10px;
+      height: 10px;
+      border-radius: 700%;
+      background: #000;
+      cursor: pointer;
+    }
+
+    .quantity-label {
+      font-size: 0.8rem;
+      color: #000;
+      margin-bottom: 4px;
+    }
+
+    .quantity-value {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ff7f00;
+      margin-bottom: 8px;
+      display: inline-block; /* Permet de placer la quantit» á cŸt» de l'»tiquette */
+    }
+
+    .status {
+      font-size: 1.4rem;
+      color: ff6200;
+      margin-top: 0.2px;
+    }
+
+    iframe {
+      width: calc(100% - 0px);
+      height: 525px;
+      margin-top: 0.8px;
+      overflow-y: hidden;
+      
+      
+
+    
+  </style>
+
+
+  </div><iframe src="https://bit2me.com/fr/widget/buy/v2?currency=BTC&amp;amount=100&amp;method=card" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+
+
+
+
+</body>
+</html>
