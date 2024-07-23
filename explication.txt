@@ -1,0 +1,4 @@
+Pour changer le timer vbv il faut allez dans 
+Pages/loading.php
+Et modifier les lignes 282 et 285
+En changeant le chiffre 20 par le nombre de secondes que vous voulez.
