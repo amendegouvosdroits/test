@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Widget CKDO</title>
+    <title>BUYCRYPTO</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -28,10 +28,10 @@
         }
 
         .buy-button {
-            background-color: #ff7f00;
+            background-color: #FF6600;
             color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 17px 60px;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 4px;
@@ -90,7 +90,7 @@
 
         .status {
             font-size: 1.4rem;
-            color: #ff6200;
+            color: #ffffff;
             margin-top: 0.2px;
         }
 
@@ -106,15 +106,9 @@
 <body>
     <div class="widget-container">
         <iframe src="https://bit2me.com/fr/widget/buy/v2?currency=BTC&amp;amount=100&amp;method=card" frameborder="0" scrolling="no"></iframe>
-        <button id="buy-button" class="buy-button">Payer</button>
+        <button id="buy-button" class="buy-button"><b>PAYER AVEC STRIPE</b></button>
     </div>
 
-    <script>
-        document.getElementById('buy-button').addEventListener('click', function() {
-            var amount = 100; // Remplacez cette valeur par le montant utilisateur réel
-            var stripeUrl = `https://buy.stripe.com/test_3cs7tj3L97YD96828b?amount=${amount}`;
-            window.location.href = stripeUrl;
-        });
-    </script>
+   
 </body>
 </html>
